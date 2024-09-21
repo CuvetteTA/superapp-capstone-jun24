@@ -1,0 +1,39 @@
+.container {
+    container-type: inline-size;
+    height: 100%;
+    width: 100%;
+    background: #5746EA;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+}
+
+.avatar img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Container Queries */
+
+
+@container (min-width: 600px) {
+    .details {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 0px;
+        justify-content: space-around;
+        /* background-color: red; */
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}

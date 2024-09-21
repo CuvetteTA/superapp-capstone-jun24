@@ -7,6 +7,8 @@ import Home from "./pages/Home.jsx";
 // import Browse from './pages/Browse.jsx'
 import Selection from "./pages/MovieSelection.jsx";
 import NotFound from "./pages/404.jsx";
+import CarouselPage from "./pages/CarouselPage";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,9 +17,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Home />} />
         {/* <Route path='/info' element={<Info />} />
         <Route path='/browse' element={<Browse />} /> */}
+        <Route path='/carousel' element={<CarouselPage />}/>
         <Route path="/selection" element={<Selection />} />
-
-        {/* Express Router. */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
