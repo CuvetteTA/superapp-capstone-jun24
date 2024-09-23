@@ -1,16 +1,17 @@
-import React from "react";
+import React from 'react'
 
-const MovieChip = ({ category, setSelectedMovies }) => {
-  const removeSelection = (category) => {
-    setSelectedMovies((selectedMovies) =>
-      selectedMovies.filter((movie) => movie !== category)
-    );
-  };
+const MovieChip = ({item, removeCategory}) => {
   return (
-    <button>
-      {category.movie} <span onClick={() => removeSelection(category)}>X</span>
-    </button>
-  );
-};
+    <div className='bg-green-600 w-full rounded-full text-white px-3 py-1 font-roboto flex justify-between'>
+      {item.category}
+      <span 
+      className='text-green-800 cursor-pointer'
+      onClick={()=>removeCategory(item)}
+      >
+        X
+      </span>
+    </div>
+  )
+}
 
-export default MovieChip;
+export default MovieChip

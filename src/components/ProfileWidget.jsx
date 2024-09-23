@@ -1,39 +1,38 @@
 import React from "react";
-import userAvatar from "../assets/userAvatar.png";
 import styles from "./ProfileWidget.module.css";
 
 const ProfileWidget = () => {
-  const seletedGeneres =
-    JSON.parse(localStorage.getItem("selectedMovies")) || [];
+  const selectedCategory = JSON.parse(localStorage.getItem("selectedCatagory")) || [];
+    const user =JSON.parse(localStorage.getItem("user")) || {};
 
-  // Needs to be replaced in the next class
-  const user = {
-    name: "Anurag @Cuvette",
-    email: "anurag@cuvette.tech",
-    username: "Anurag TA",
-  };
-
-  return (
-    <div className={styles.container}>
-      <div className={styles.avatar}>
-        <img src={userAvatar} alt="User Avatar" />
-      </div>
-      <div className={styles.details}>
-        <p className={styles.name}>{user?.name}</p>
-        <p className={styles.email}>{user?.email}</p>
-        <p className={styles.username}>{user?.username}</p>
-
-        <div className={styles.generes}>
-          {seletedGeneres?.slice(0, 4)?.map((genere, index) => (
-            <div key={index} className={styles.pill}>
-              {genere.movie}
-            </div>
-          ))}
-        </div>
-        
-      </div>
+  return (    
+<div className="grid grid-cols-4 grid-rows-4 gap-10">
+    <div className="row-span-4">
+        <img src="images/avatar.png" className='h-full'/>
     </div>
-  );
+
+    <div className="col-span-3 row-span-2 pt-4">
+        <p className='text-2xl font-normal tracking-wider'>{user.name}</p>
+        <p className='text-2xl font-normal tracking-wider'>{user.email}</p>
+        <p className='text-5xl font-medium tracking-wider'>{user.username}</p>
+    </div>
+
+    <div className="col-span-3 row-span-2 col-start-2 row-start-3 pb-4 pr-4">        
+        <div className="grid grid-cols-2 gap-4">
+            {
+                selectedCategory.map((item)=>{
+                 return(  
+                    <div key={item.id} className='py-2 px-6 rounded-full' style={{backgroundColor:"rgba(159, 148, 255, 1)"}}>
+                        {item.category}
+                    </div>
+                 )
+                })
+            }
+        </div>        
+    </div>
+</div>
+    
+  )
 };
 
 export default ProfileWidget;
