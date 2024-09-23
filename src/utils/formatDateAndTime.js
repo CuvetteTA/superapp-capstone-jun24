@@ -1,10 +1,6 @@
-const formatDateAndTime = (date = Date.now()) =>{
+const formatDateTime = (date = Date.now()) =>{
     const newDate = new Date(date);
-    const formattedDate = newDate.toLocaleDateString("en-US", {
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-    });
+    const formattedDate = newDate.toLocaleDateString("en-US").replaceAll('/','-');
     const formattedTime = newDate.toLocaleTimeString("en-US", {
         hour: "numeric",
         minute: "numeric",
@@ -16,4 +12,4 @@ const formatDateAndTime = (date = Date.now()) =>{
     }
 }
 
-export default formatDateAndTime
+export default formatDateTime

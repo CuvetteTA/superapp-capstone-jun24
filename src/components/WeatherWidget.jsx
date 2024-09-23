@@ -1,12 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import fetchWeather from "../api/fetchWeather";
-import formatDateAndTime from "../utils/formatDateAndTime";
 import styles from "./WeatherWidget.module.css";
 
 const WeatherWidget = () => {
   const [weatherData, setWeatherData] = useState();
-  const [dateTime, setDateTime] = useState();
 
   useEffect(() => {
     // Fetch the weather data from the API
@@ -23,50 +21,37 @@ const WeatherWidget = () => {
       });
     });
     // Get this from the utility Function defined in the utils folder
-    const { date, time } = formatDateAndTime();
-    setDateTime({ date, time });
   }, []);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        {dateTime && (
-          <>
-            <p className={styles.data}>{dateTime.date}</p>
-            <p className={styles.time}>{dateTime.time}</p>
-          </>
-        )}
-      </div>
-      <div className={styles.content}>
-        {weatherData ? (
-          <>
-            <img
-              className={styles.thumbnail}
-              src={weatherData.thumbnail}
-              alt="Thumbnail"
-            />
-            <div className={styles.temperature}>
-              {weatherData.temperature}°C
+     <div className='p-3 flex justify-evenly'>
+        <div className='flex flex-col justify-normal items-center'>
+            <img src={weatherData?.thumbnail} className='h-28'/>
+            <p className='text-lg'>{weatherData?.condition}</p>
+        </div>
+
+         <img src="images/line.png" className='h-1/3 my-auto'/>
+
+        <div className='flex flex-col justify-evenly '>
+            <p className='text-5xl font-normal'>{weatherData?.temperature}°C</p>
+            <div className='flex justify-center items-center'>
+                <img src="images/pressure.png" className='h-8 mr-2'/> 
+                <span>{weatherData?.pressure} mbar <p className='font-semibold'>Pressure</p></span>
             </div>
-            <div className={styles.condition}>{weatherData.condition}</div>
-            <div className={styles.details}>
-              <div className={styles.detail}>
-                <span>Pressure</span>
-                <span>{weatherData.pressure} mb</span>
-              </div>
-              <div className={styles.detail}>
-                <span>Wind</span>
-                <span>{weatherData.wind} kph</span>
-              </div>
-              <div className={styles.detail}>
-                <span>Humidity</span>
-                <span>{weatherData.humidity}%</span>
-              </div>
+        </div>
+
+        <img src="images/line.png" className='h-1/3 my-auto'/>
+
+        <div className='flex flex-col justify-evenly '> 
+            <div className='flex justify-evenly items-center'>
+                <img src="images/wind.png" className='h-7 mr-2'/>
+                <span>{weatherData?.wind}Km/h <p className='font-semibold'>Wind</p></span>
             </div>
-          </>
-        ) : (
-          <div>Loading...</div>
-        )}
-      </div>
+            <div className='flex justify-evenly items-center'>
+                <img src="images/humidity.png" className='h-7 mr-2'/>
+                <span>{weatherData?.humidity}% <p className='font-semibold'>Humidity</p></span>
+            </div>
+        </div>
     </div>
   );
 };

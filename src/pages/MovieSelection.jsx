@@ -4,105 +4,123 @@ import { useNavigate } from "react-router-dom";
 import MovieBox from "../components/MovieBox";
 import MovieChip from "../components/MovieChip";
 
-const MOVIES = [
+const categories = [
   {
-    id: 0,
-    movie: "Action",
+    id:0,
+    category: 'Action'
   },
   {
-    id: 1,
-    movie: "Drama",
+    id:1,
+    category: 'Drama'
   },
   {
-    id: 2,
-    movie: "Romance",
+    id:2,
+    category: 'Romance'
   },
   {
-    id: 3,
-    movie: "Thriller",
+    id:3,
+    category: 'Thriller'
   },
   {
-    id: 4,
-    movie: "Horror",
+    id:4,
+    category: 'Western'
   },
   {
-    id: 5,
-    movie: "Western",
+    id:5,
+    category: 'Horror'
   },
   {
-    id: 6,
-    movie: "Fantasy",
+    id:6,
+    category: 'Fantasy'
   },
   {
-    id: 7,
-    movie: "Fiction",
+    id:7,
+    category: 'Music'
   },
   {
-    id: 8,
-    movie: "Music",
+    id:8,
+    category: 'Fiction'
   },
-];
+  
+]
 
 export default function Selection() {
   const navigate = useNavigate();
-  const [selectedMovies, setSelectedMovies] = useState([]);
+  
+  const [selectedCategory, setSelectedCategory] = useState([]);
 
-  const moveNext = () => {
-    if (selectedMovies.length < 3) {
-      alert("Please select atleast 3 movies");
-      return;
-    }else{
-        localStorage.setItem("selectedMovies", JSON.stringify(selectedMovies));
-        setSelectedMovies([]);
-        navigate("/info")
-    }
-   
-  };
+  const handleNext = ()=>{
+    if(selectedCategory.length < 3)
+    return;
+
+    localStorage.setItem("selectedCatagory", JSON.stringify(selectedCategory));
+    setSelectedCategory([]);
+    navigate('/carousel');
+  }
+
+  const removeCategory = (category)=>{
+    setSelectedCategory(
+      selectedCategory.filter((item)=> item.id !== category.id)
+    )
+
+  }
 
   return (
-    <div>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-        }}
-      >
-        {MOVIES.map((category) => (
-          <div key={category.id}>
-            <MovieBox
-              selectedMovies={selectedMovies}
-              setSelectedMovies={setSelectedMovies}
-              category={category}
-            />
-            
-          </div>
-        ))}
+    <div className='min-h-screen flex flex-col lg:flex-row bg-black px-6 lg:px-28' >
+    <div className='w-full lg:w-2/5 my-8 lg:my-32 font-roboto'>
+      <img src="images/logo.png" className='w-40 h-10'/>
+      <div className='w-full lg:w-2/3'>
+      <p className='font-bold text-xl lg:text-4xl text-white my-10 leading-relaxed'>Choose your entertainment category</p>
       </div>
 
-      {selectedMovies.length < 3 && (
-        <p
-          style={{
-            color: "red",
-          }}
-        >
-          Please select atleast 3 movies
-        </p>
-      )}
-
-      <div>
-        {selectedMovies.map((category) => (
-          <p key={category.id}>
-            <MovieChip
-              key={category.id}
-              category={category}
-              setSelectedMovies={setSelectedMovies}
-            />
-          </p>
-        ))}
+      <div className='lg:mr-24'>
+      <div className='grid gap-4 grid-cols-2'>
+      {
+        selectedCategory.map((item)=>{
+          return(
+          <MovieChip 
+          key = {item.id}
+          item={item}
+          removeCategory={removeCategory}
+          />
+          )
+        })
+      }
+      </div>
       </div>
 
-      <button onClick={moveNext}>Next</button>
+      { selectedCategory.length < 3 &&
+        <p className='text-red-600 font-normal leading-6 flex mt-6'>
+        <img src="images/warning.png" alt="" className='h-4 mr-2'/> 
+        Minimum 3 category required
+      </p>   
+      }     
     </div>
+
+    <div className='w-full lg:w-3/5 mt-4 lg:mt-24 lg:ml-20 mb-10'>
+      <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 text-slate-50 mb-16">
+        {
+          categories.map((item)=> <MovieBox
+          key={item.id}
+          item = {item}
+          selectedCategory = {selectedCategory}
+          setSelectedCategory = {setSelectedCategory} 
+          />)
+        }  
+      </div>      
+
+      <div className='flex justify-end'>
+      <button 
+      type="button" 
+      className='bg-green-600 w-2/5 lg:w-1/5 rounded-full text-white py-2 font-roboto font-semibold text-lg '
+      onClick={handleNext}
+      >
+        Next
+      </button>
+      </div>
+    </div>
+
+  </div>
   );
 }
 
