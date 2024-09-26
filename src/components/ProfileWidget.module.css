@@ -4,23 +4,57 @@
     width: 100%;
     background: #5746EA;
     border-radius: 20px;
-    padding: 10px;
+    padding: 20px;
+    padding-left: 32px;
     display: flex;
 }
 
 .avatar img {
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     object-fit: cover;
 }
 
 .details {
+    margin-left: 40px;
+
     display: flex;
     flex-direction: column;
 }
-
+.userDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    height: 40%;
+    gap:6px;
+    margin-top: 20px;
+    
+}
+.name{
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 350;
+}
+.email {
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 350;
+}
+.username{
+    color:white;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 3rem;
+}
 .genres {
+    height: 50%;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding-top: 25px;
 }
 
 /* Container Queries */
@@ -30,7 +64,6 @@
     .details {
         display: flex;
         flex-direction: column;
-        padding: 40px 0px;
         justify-content: space-around;
         /* background-color: red; */
         font-size: 2rem;

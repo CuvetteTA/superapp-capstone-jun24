@@ -3,7 +3,6 @@
     width: 100%;
     background: #101744;
     border-radius: 20px;
-    padding: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -12,11 +11,57 @@
     display: flex;
     justify-content: space-around;
     background: #FF4ADE;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 30%;
 }
+.data{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Roboto';
+}
+.time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto';
+    font-size: 2rem;
+}
+
 
 .content {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 20px;
+    padding: 7px;
+    flex-grow: 1;
+}
+
+.thumbnail{
+    color: white;
+    font-size: 2rem;
+
+}
+.temperature{
+    color: white;
+    font-size: 2.5rem;
+    font-family: 'Roboto';
+}
+
+.pressure{
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+.detail{
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Roboto';
 }
