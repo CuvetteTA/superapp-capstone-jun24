@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "../components/Home.module.css";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -68,19 +69,21 @@ export default function Home() {
 
   }
   return (
-    <div>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-          width: "40vw",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-      >
-        <input
+  <div className={styles.main}>
+    <div className={styles.discover}>
+      <h1>Discover new things on Superapp</h1>
+    </div>
+    <div className={styles.formDiv}>
+        <form
+          onSubmit={handleSubmit}
+          className={styles.form}
+        >
+      <div className={styles.formHeading}>
+        <h1>Super App</h1>
+        <p>Create your new account</p>
+      </div>
+      <div className={styles.inputs}>
+        <input className={styles.inputField}
           type="text"
           name="name"
           placeholder="name"
@@ -90,6 +93,7 @@ export default function Home() {
         <span style={{ color: "red", height: "20px" }}>{errors.name}</span>
 
         <input
+          className={styles.inputField}
           type="text"
           name="username"
           placeholder="username"
@@ -99,6 +103,7 @@ export default function Home() {
         <span style={{ color: "red", height: "20px" }}>{errors.username}</span>
 
         <input
+          className={styles.inputField}
           type="email"
           name="email"
           placeholder="email"
@@ -108,6 +113,7 @@ export default function Home() {
         <span style={{ color: "red", height: "20px" }}>{errors.email}</span>
 
         <input
+          className={styles.inputField}
           type="tel"
           name="mobile"
           placeholder="mobile"
@@ -115,22 +121,32 @@ export default function Home() {
           onChange={handleInput}
         />
         <span style={{ color: "red", height: "20px" }}>{errors.mobile}</span>
+      </div>
 
-        <div>
-          <input
-            type="checkbox"
-            name="checkbox"
-            id="checkbox"
-            onChange={handleInput}
-          />
-          <label htmlFor="checkbox">
-            Share my registration data with Superapp
-          </label>
-        </div>
-        <span style={{ color: "red", height: "20px" }}>{errors.checkbox}</span>
 
-        <button type="submit">Submit</button>
-      </form>
+      <div>
+        <input
+          className={styles.checkbox}
+          type="checkbox"
+          name="checkbox"
+          id="checkbox"
+          onChange={handleInput}
+        />
+        <label className={styles.checkBoxDialogue} htmlFor="checkbox">
+          Share my registration data with Superapp
+        </label>
+      </div>
+      <div>
+        <span style={{ color: "red",  height: "30px" }}>{errors.checkbox}</span>
+        <br/>
+        <button className={styles.submitButton} type="submit">SIGN UP</button>
+      </div>
+      <div className={styles.termsAndConditions}>
+        <p>By clicking on Sign up. you agree to Superapp <span className={styles.tc}>Terms and Conditions of Use </span></p>
+        <p>To learn more about how Superapp collects, uses, shares and protects your personal data please head Superapp <span className={styles.tc}>Privacy Policy </span> </p>
+      </div>
+    </form>
+    </div>
     </div>
   );
 }
