@@ -1,35 +1,50 @@
 .container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    color: black;
-    border-radius: 20px;
+  font-family: "roboto";
+  display: flex;
+  flex-direction: column;
+  background: white;
+  color: black;
+  border-radius: 20px;
+  height: 100%;
+  overflow: hidden; /* Ensure contents don't overflow the border */
+  width: 100%; /* Adjust width as needed */
 }
 
-.header {
-    position: relative;
+.imageContainer {
+  position: relative;
+  width: 100%; /* Full width */
+  height: 200px; /* Fixed height for the image container */
+  overflow: hidden; /* Hide overflow for the image */
 }
 
-.heading {
-    background-color: black;
-    padding: 10px 15px;
-    opacity: 0.75;
-    color: white;
-    position: absolute;
-    bottom: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+  border-radius: 20px 20px 0 0; /* Rounded corners for the top */
 }
 
-.heading p:last-of-type {
-    font-size: 0.8rem;
+.titleOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding-left: 20px;
+  color: white;
+  width: 100%;
 }
 
+.publishedDate {
+  font-size: 0.8rem; /* Smaller font for the date */
+  margin-top: 5px; /* Space between title and date */
+}
 
-.header img {
-    width: 100%;
-    object-fit: cover;
+.contentContainer {
+  padding: 10px; /* Space for content */
+  height: 100%;
+}
+
+.body {
+  margin-top: 10px; /* Space above the content */
 }

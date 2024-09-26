@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  min-width: 100vw;
+}
+
+.contentContainer {
+  background: url("../assets//bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-grow: 1;
+  width: 845px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding-bottom: 2%;
+  padding-left: 2%;
+}
+.leftContentContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  justify-content: center;
+  gap: 50px;
+}
+
+.formContainer {
+  /* width: 883px; */
+  /* flex-grow: 2; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  /* padding: 100px; */
+  padding-left: 100px;
+  padding-right: 100px;
+  width: auto;
+}
+
+.inputContainer {
+  color: #7c7c7c;
+  background-color: #292929;
+  padding: 15px;
+  font-size: 20px;
+  width: auto;
+  border: none;
+  border-radius: 5px;
+}
+
+.submitButton {
+  color: white;
+  background-color: #72db73;
+  font-weight: 600;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.checkBox {
+  background-color: #d9d9d9;
+  border: none;
+}
+
+.contentContainerTexts {
+  color: white;
+  font-size: 55px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+.logoContainer {
+  background-color: black;
+}
+.logo {
+  font-family: "Single Day";
+  background-color: black;
+  color: #72db73;
+  text-align: center;
+}
+
+.logoSubtext {
+  font-family: "DM Sans";
+  color: white;
+  text-align: center;
+}

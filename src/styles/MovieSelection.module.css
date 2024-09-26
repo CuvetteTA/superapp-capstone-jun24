@@ -1,0 +1,12 @@
+.logo {
+  font-family: "Single Day";
+  background-color: black;
+  color: #72db73;
+  font-size: 42px;
+}
+
+.movieChipContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}

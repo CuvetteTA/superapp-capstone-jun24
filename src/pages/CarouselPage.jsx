@@ -7,11 +7,13 @@ import WeatherWidget from "../components/WeatherWidget";
 const CarouselPage = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.profileWidget}>
-        <ProfileWidget />
-      </div>
-      <div className={styles.weatherWidget}>
-        <WeatherWidget />
+      <div className={styles.leftColumn}>
+        <div className={styles.profileWidget}>
+          <ProfileWidget />
+        </div>
+        <div className={styles.weatherWidget}>
+          <WeatherWidget />
+        </div>
       </div>
       <div className={styles.newsWidget}>
         <NewsWidget />
