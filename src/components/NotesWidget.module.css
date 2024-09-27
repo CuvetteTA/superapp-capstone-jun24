@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 20px;
+  height: 100%;
+  overflow: hidden;
+  width: 350px;
+  font-family: "roboto";
+  background-color: #f1c75b;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.noteList {
+  padding: 10px;
+  overflow-x: scroll;
+}
+
+.noteContainer {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.noteTitle {
+  font-weight: bold;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.noteContent {
+  margin: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.arrowIcon {
+  cursor: pointer;
+  margin-left: 10px;
+  color: #333;
+}
+
+.addNoteButton {
+  background-color: #ff6a6a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.addNoteButton:hover {
+  background-color: #ff4c4c;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 10px;
+  outline: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "roboto";
+  width: 30vw;
+  padding: 20px;
+}
+
+.modal input,
+.modal textarea {
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.modal button {
+  background-color: #f1c75b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.modal button:hover {
+  background-color: #e1b85b;
+}
+
+.deleteButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
+}

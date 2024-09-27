@@ -8,7 +8,7 @@ import Home from "./pages/Home.jsx";
 import Selection from "./pages/MovieSelection.jsx";
 import NotFound from "./pages/404.jsx";
 import CarouselPage from "./pages/CarouselPage";
-
+import DashboardPage from "./pages/DashboardPage.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -17,11 +17,11 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={<Home />} />
         {/* <Route path='/info' element={<Info />} />
         <Route path='/browse' element={<Browse />} /> */}
-        <Route path='/carousel' element={<CarouselPage />}/>
+        <Route path="/carousel" element={<CarouselPage />} />
         <Route path="/selection" element={<Selection />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
 );
-

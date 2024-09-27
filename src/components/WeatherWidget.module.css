@@ -1,22 +1,72 @@
 .container {
-    height: 100%;
-    width: 100%;
-    background: #101744;
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+  font-family: "roboto";
+  background: #101744;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header {
-    display: flex;
-    justify-content: space-around;
-    background: #FF4ADE;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 200px;
+  padding: 10px;
+  background: #ff4ade;
+  border-radius: 10px;
+}
+
+.date,
+.time {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
 }
 
 .content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.leftColumn,
+.centerColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.condition {
+  width: 200px;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  color: white;
+  margin-top: 10px;
+}
+
+.temperature {
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  font-size: 16px;
+  color: white;
+  margin-top: 10px;
+  gap: 20px;
 }
