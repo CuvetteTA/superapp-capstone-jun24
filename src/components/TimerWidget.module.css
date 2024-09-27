@@ -1,0 +1,54 @@
+.container {
+  background-color: #1e2343;
+  align-items: center;
+  display: flex;
+  padding: 20px;
+  border-radius: 20px;
+  font-family: "roboto";
+  color: white;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  background-color: #14182b;
+  border-radius: 50%;
+  box-shadow: 0px 5px 31px 17px #0000009c inset;
+  margin: 20px;
+  font-weight: bold;
+}
+
+.configure {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 80px;
+}
+
+.timerValues {
+  font-size: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+.timerButton {
+  width: 100%;
+  background-color: #ff6a6a;
+  border-radius: 10px;
+  height: 47px;
+  border: none;
+  color: white;
+  font-size: 31px;
+}

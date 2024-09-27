@@ -1,27 +1,25 @@
 .container {
-  font-family: "roboto";
   display: flex;
   flex-direction: column;
   background: white;
-  color: black;
   border-radius: 20px;
   height: 100%;
-  overflow: hidden; /* Ensure contents don't overflow the border */
-  width: 100%; /* Adjust width as needed */
+  overflow: hidden;
+  width: 95%;
 }
 
 .imageContainer {
   position: relative;
-  width: 100%; /* Full width */
-  height: 500px; /* Fixed height for the image container */
-  overflow: hidden; /* Hide overflow for the image */
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
 }
 
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the container */
-  border-radius: 20px 20px 0 0; /* Rounded corners for the top */
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
 }
 
 .titleOverlay {
@@ -29,22 +27,22 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.7);
   padding-left: 20px;
   color: white;
   width: 100%;
 }
 
 .publishedDate {
-  font-size: 0.8rem; /* Smaller font for the date */
-  margin-top: 5px; /* Space between title and date */
+  font-size: 0.8rem;
+  margin-top: 5px;
 }
 
 .contentContainer {
-  padding: 10px; /* Space for content */
+  padding: 10px;
   height: 100%;
 }
 
 .body {
-  margin-top: 10px; /* Space above the content */
+  margin-top: 10px;
 }

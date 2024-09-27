@@ -2,32 +2,24 @@
   height: 100%;
   padding: 20px;
   width: auto !important;
-  /* padding: 20px; Adjust padding as needed */
   display: flex;
-  gap: 50px; /* Space between the columns */
+  gap: 50px;
   background-color: black;
 }
 
 .leftColumn {
   display: flex;
-  flex-direction: column; /* Stack profile and weather vertically */
+  flex-direction: column;
   gap: 50px;
-  flex: 2; /* Adjust this value as needed for width */
-}
-
-.profileWidget {
-  height: 100%;
-  width: 100%;
-  /* margin-bottom: 20px; Space between profile and weather widgets */
+  flex: 2;
 }
 
 .weatherWidget {
-  /* Additional styles can be added here */
   height: 100%;
   width: 100%;
 }
 
 .newsWidget {
   border-radius: 20px;
-  flex: 1; /* Right column takes equal space */
+  flex: 1;
 }

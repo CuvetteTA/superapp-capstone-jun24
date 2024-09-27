@@ -1,9 +1,7 @@
 .container {
   font-family: "roboto";
-  height: 100%;
   background: #101744;
   border-radius: 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,7 +10,6 @@
 .header {
   display: flex;
   text-align: center;
-
   justify-content: center;
   gap: 200px;
   padding: 10px;
@@ -65,7 +62,6 @@
 
 .detail {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   align-items: center;
   width: 100px;

@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  padding: 20px;
+  background-color: black;
+  gap: 20px;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.flexContainer {
+  display: flex;
+  height: fit-content;
+  gap: 20px;
+}
+
+.notesWidget {
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.newsWidget {
+  flex: 1;
+  width: 100%;
+}

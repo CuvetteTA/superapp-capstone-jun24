@@ -1,7 +1,5 @@
 .container {
   font-family: "roboto";
-  height: 100%;
-  /* width: 100%; */
   background: #5746ea;
   border-radius: 20px;
   padding: 10px;
@@ -24,23 +22,22 @@
 
 .details > .name,
 .details > .email {
-  font-size: 36px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
 }
 
 .details > .username {
-  font-size: 72px;
+  font-size: 42px;
   margin: 0;
   padding: 0;
 }
+
 .generes {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
-
-/* Container Queries */
 
 @container (min-width: 600px) {
   .details {
@@ -48,7 +45,6 @@
     flex-direction: column;
     padding: 40px 0px;
     justify-content: space-around;
-    /* background-color: red; */
     font-size: 2rem;
     font-weight: bold;
   }
