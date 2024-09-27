@@ -1,6 +1,7 @@
 import React from "react";
+import styles from "../components/MovieSelection.module.css"
 
-const MovieBox = ({ category, selectedMovies, setSelectedMovies }) => {
+const MovieBox = ({ category, selectedMovies, setSelectedMovies, image }) => {
 
     const handleSelection = (category) => () => {
         if(selectedMovies.includes(category)){
@@ -15,8 +16,9 @@ const MovieBox = ({ category, selectedMovies, setSelectedMovies }) => {
       style={{
         width: "150px",
         height: "150px",
-        backgroundColor: "lightblue",
+        // backgroundColor: "lightblue",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         margin: "10px",
@@ -27,6 +29,8 @@ const MovieBox = ({ category, selectedMovies, setSelectedMovies }) => {
       onClick={handleSelection(category)}
     >
       <h1>{category.movie}</h1>
+      <div>
+        <img className={styles.categoryimage}  src={image} alt={category.movie} /></div>
     </div>
   );
 };
