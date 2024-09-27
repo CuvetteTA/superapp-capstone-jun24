@@ -13,7 +13,7 @@
 .imageContainer {
   position: relative;
   width: 100%; /* Full width */
-  height: 200px; /* Fixed height for the image container */
+  height: 500px; /* Fixed height for the image container */
   overflow: hidden; /* Hide overflow for the image */
 }
 

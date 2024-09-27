@@ -34,7 +34,7 @@ const NewsWidget = () => {
               <p>{news?.title}</p>
               {news?.publishedAt && (
                 <p className={styles.publishedDate}>
-                  {moment(news.publishedAt).format("DD:MM:YYYY")}
+                  {moment(news.publishedAt).format("DD-MM-YYYY hh:mm:ss")}
                 </p>
               )}
             </div>
