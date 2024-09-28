@@ -10,9 +10,9 @@ const WeatherWidget = () => {
 
   useEffect(() => {
     // Fetch the weather data from the API
-    fetchWeather().then((data) => {
+    fetchWeather().then((store) => {
       const { temp_c, condition, pressure_mb, wind_kph, humidity } =
-        data.current;
+        store
       setWeatherData({
         temperature: temp_c,
         condition: condition.text,
