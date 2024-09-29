@@ -1,0 +1,188 @@
+.header {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.heroImgContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.heroImgContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroTitle {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  font-size: 5rem;
+  bottom: 6rem;
+  left: 4rem;
+  letter-spacing: 1px;
+}
+
+.heroSignUp {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 5rem; */
+}
+
+.heroSignUp .appTitle {
+  font-size: 3.2rem;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.heroSignUp .subTitle {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 3.2rem;
+}
+
+.heroSignUp .formContainer {
+  width: 32rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContainer .inputField {
+  width: 100%;
+  height: 5.4rem;
+  position: relative;
+  font-size: 1.4rem;
+  background-color: #292929;
+  /* text-overflow: ellipsis; */
+  transition: all 0.3s;
+  margin-bottom: 0.2rem;
+}
+
+.formContainer span,
+.checker span {
+  width: 100%;
+  display: block;
+  font-size: 1rem;
+  height: 1.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.8rem;
+  color: rgb(255, 79, 79);
+}
+
+.inputField input {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 4px;
+  transition: border 0.3s;
+}
+
+.inputField label {
+  position: absolute;
+  pointer-events: none;
+  left: 1rem;
+  padding-bottom: 1.5rem;
+  padding-top: 0.6rem;
+  line-height: 6px;
+  font-size: 1.4rem;
+  color: var(--label-color);
+  transform: translateY(1.8rem);
+  transition: all 0.3s;
+}
+
+.inputField input::placeholder {
+  visibility: hidden;
+}
+
+.inputField input:focus + label,
+input:not(:placeholder-shown) + label {
+  transform: translateY(2px);
+  font-size: 1.1rem;
+}
+
+input:not(:placeholder-shown) {
+  padding-top: 14px;
+}
+
+.inputField input:focus {
+  padding-top: 1.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.checkerContainer {
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 2rem;
+}
+
+.checker {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.checker input {
+  width: 2rem;
+  height: 2rem;
+  accent-color: var(--primary-color);
+}
+
+.signUpBtn {
+  width: 100%;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  margin-bottom: 2rem;
+}
+
+.signUpBtn:hover {
+  background-color: #27b029;
+  color: #fff;
+}
+
+.terms {
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.terms span {
+  color: var(--primary-color);
+}
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 45em) {
+  .header {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .heroImgContainer {
+    display: none;
+  }
+}
