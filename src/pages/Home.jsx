@@ -1,7 +1,9 @@
 import { useState } from "react";
+import styles from "./Home.module.css";
 import { useNavigate } from "react-router-dom";
+import image from "../assets/bg.png";
 
-export default function Home() {
+const Home = () => {
   const navigate = useNavigate();
 
   const [data, setData] = useState({
@@ -20,19 +22,20 @@ export default function Home() {
     checkbox: "",
   });
 
-  const handleInput = (e) => {
+  function handleInput(e) {
     setData({
       ...data,
       [e.target.name]:
         e.target.type === "checkbox" ? e.target.checked : e.target.value,
     });
-  };
+  }
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
+
     let errors = {};
 
-    if(!data.name || data.name.trim() === ""){
+    if (!data.name || data.name.trim() === "") {
       errors.name = "Name is required";
     }
     if (!data.username || data.username.trim() === "") {
@@ -50,10 +53,10 @@ export default function Home() {
 
     setErrors(errors);
 
-    if(Object.keys(errors).length > 0){
+    if (Object.keys(errors).length > 0) {
       return;
-    }else{
-      alert("Form Submitted Successfully");
+    } else {
+      alert("Form Submitted Sucessfully!");
       localStorage.setItem("user", JSON.stringify(data));
       setData({
         name: "",
@@ -64,76 +67,105 @@ export default function Home() {
       });
       navigate("/selection");
     }
-
-
   }
+
   return (
-    <div>
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "20px",
-          width: "40vw",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="name"
-          value={data.name}
-          onChange={handleInput}
-        />
-        <span style={{ color: "red", height: "20px" }}>{errors.name}</span>
+    <header className={styles.header}>
+      <section className={styles.heroImgContainer}>
+        <h1 className={styles.heroTitle}>Discover new things on Superapp</h1>
+        <img src={image} alt="hero image" />
+      </section>
+      <section className={styles.heroSignUp}>
+        <h1 className={styles.appTitle}>Super App</h1>
+        <p className={styles.subTitle}>Create your new account</p>
+        <form className={styles.formContainer} onSubmit={handleSubmit}>
+          <div className={styles.inputField}>
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              id="name"
+              value={data.name}
+              onChange={handleInput}
+            />
+            <label htmlFor="name">Name</label>
+          </div>
+          <span>{errors.name}</span>
 
-        <input
-          type="text"
-          name="username"
-          placeholder="username"
-          value={data.username}
-          onChange={handleInput}
-        />
-        <span style={{ color: "red", height: "20px" }}>{errors.username}</span>
+          <div className={styles.inputField}>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              id="username"
+              value={data.username}
+              onChange={handleInput}
+            />
+            <label htmlFor="username">Username</label>
+          </div>
+          <span>{errors.username}</span>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          value={data.email}
-          onChange={handleInput}
-        />
-        <span style={{ color: "red", height: "20px" }}>{errors.email}</span>
+          <div className={styles.inputField}>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              id="email"
+              value={data.email}
+              onChange={handleInput}
+            />
+            <label htmlFor="email">Email</label>
+          </div>
+          <span>{errors.email}</span>
 
-        <input
-          type="tel"
-          name="mobile"
-          placeholder="mobile"
-          value={data.mobile}
-          onChange={handleInput}
-        />
-        <span style={{ color: "red", height: "20px" }}>{errors.mobile}</span>
+          <div className={styles.inputField}>
+            <input
+              type="tel"
+              placeholder="Mobile number"
+              name="mobile"
+              id="mobile"
+              maxLength={10}
+              value={data.mobile}
+              onChange={handleInput}
+            />
+            <label htmlFor="mobile">Mobile number</label>
+          </div>
+          <span>{errors.mobile}</span>
 
-        <div>
-          <input
-            type="checkbox"
-            name="checkbox"
-            id="checkbox"
-            onChange={handleInput}
-          />
-          <label htmlFor="checkbox">
-            Share my registration data with Superapp
-          </label>
-        </div>
-        <span style={{ color: "red", height: "20px" }}>{errors.checkbox}</span>
+          <div className={styles.checkerContainer}>
+            <div className={styles.checker}>
+              <input
+                type="checkbox"
+                name="checkbox"
+                id="checkbox"
+                value={data.checkbox}
+                onChange={handleInput}
+              />
+              <label htmlFor="checkbox">
+                Share my registration data with Superapp
+              </label>
+            </div>
+            <span>{errors.checkbox}</span>
+          </div>
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+          <button className={styles.signUpBtn}>Sign Up</button>
+
+          <p className={styles.terms}>
+            By clicking on Sign up. you agree to Superapp{" "}
+            <span>Terms and Conditions of Use</span>
+          </p>
+
+          <p className={styles.terms}>
+            To learn more about how Superapp collects, uses, shares and protects
+            your personal data please head Superapp <span>Privacy Policy</span>
+          </p>
+        </form>
+      </section>
+    </header>
   );
-}
+};
+
+export default Home;
 
 // # Homework
 //  Largest Contentful Paint (LCP)
