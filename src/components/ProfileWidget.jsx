@@ -15,22 +15,27 @@ const ProfileWidget = () => {
 
   return (
     <div className={styles.container}>
+
       <div className={styles.avatar}>
         <img src={userAvatar} alt="User Avatar" />
       </div>
-      <div className={styles.details}>
-        <p className={styles.name}>{user?.name}</p>
-        <p className={styles.email}>{user?.email}</p>
-        <p className={styles.username}>{user?.username}</p>
 
-        <div className={styles.generes}>
+      <div className={styles.details}>
+
+        <div className={styles.userDetails}>
+          <p className={styles.name}>{user?.name}</p>
+          <p className={styles.email}>{user?.email}</p>
+          <p className={styles.username}>{user?.username}</p>
+        </div>
+
+        <div className={styles.genres}>
           {seletedGeneres?.slice(0, 4)?.map((genere, index) => (
             <div key={index} className={styles.pill}>
               {genere.movie}
             </div>
           ))}
         </div>
-        
+
       </div>
     </div>
   );

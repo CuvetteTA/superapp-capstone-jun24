@@ -1,0 +1,92 @@
+
+
+.heading{
+    color: #72DB73;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Single Day";
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+.input{
+    background-color: #292929;
+    color : white;
+    padding: 15px;
+    height : 5px;
+}
+
+.FormContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.BoxContainer{
+    height: 100vh;
+    width : 100vw;
+    display: flex;
+    background-color : black;
+    justify-content: center;
+    align-items: center;
+      
+}
+
+.button{
+    background-color: #72DB73;
+    padding: 10px;
+    width:100%;
+    color: white;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+
+    
+}
+
+.button:hover{
+    background-color: #27d62a;
+
+
+}
+
+.Contentcontainer{
+    display: flex;
+    height: 90%;
+    width : 70%;
+    box-shadow: 5px 5px 2px 2px rgb(81, 78, 78);
+}
+
+.image{
+    height : 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.TextOverImage{
+    position:absolute;
+    bottom : 75px;
+    left : 40px;
+    font-family: "Roboto";
+    color: white;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.span{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gray;
+    font-size: 12px;
+    font-family: "Roboto";
+}
+
+.label{
+    color: gray;
+    font-family: "DM sans";
+    margin-left: 7px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
