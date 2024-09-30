@@ -1,35 +1,104 @@
+/* Container Styles */
 .container {
-    height: 100%;
     width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+  
+  .skeletonContainer {
     display: flex;
     flex-direction: column;
-    background: white;
-    color: black;
-    border-radius: 20px;
-}
-
-.header {
+    gap: 16px;
+    animation: pulse 1.2s infinite ease-in-out;
+  }
+  
+  .skeletonHeader {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .skeletonImage {
+    width: 100px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+  }
+  
+  .skeletonText {
+    flex: 1;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  .skeletonBody {
+    height: 80px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+  }
+  
+  /* Skeleton Animation */
+  @keyframes pulse {
+    0% {
+      background-color: #f0f0f0;
+    }
+    50% {
+      background-color: #e0e0e0;
+    }
+    100% {
+      background-color: #f0f0f0;
+    }
+  }
+  
+  /* Actual content styles */
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 16px;
+  }
+  
+  .heading p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Image wrapper to handle the smooth loading of the image */
+  .imageWrapper {
     position: relative;
-}
-
-.heading {
-    background-color: black;
-    padding: 10px 15px;
-    opacity: 0.75;
-    color: white;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .imageSkeleton {
     position: absolute;
-    bottom: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.heading p:last-of-type {
-    font-size: 0.8rem;
-}
-
-
-.header img {
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    animation: pulse 1.2s infinite ease-in-out;
+  }
+  
+  /* Image styles with display and transition for smooth loading */
+  .image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-}
+    border-radius: 8px;
+    display: none; /* Hidden by default, visible after load */
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .body p {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #666;
+  }
+  

@@ -6,6 +6,7 @@
     border-radius: 20px;
     padding: 10px;
     display: flex;
+    color: white;
 }
 
 .avatar img {
